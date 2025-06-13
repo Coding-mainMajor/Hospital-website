@@ -5,15 +5,19 @@ import Login from "./pages/Login";
 import Doctors from "./pages/Doctors";
 import Contact from "./pages/Contact";
 import MyProfile from "./pages/MyProfile";
-import MyAppointmeint from "./pages/MyAppointmeint";
+import MyAppointment from "./pages/MyAppointment";
 import Appointment from "./pages/Appointment";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import About from "./pages/About";
+import { ToastContainer, toast } from "react-toastify";
+import PaystackVerification from "./pages/PaystackVerification";
+
 const App = () => {
   return (
     <div className="mx-4 sm:mx-[10%]">
+      <ToastContainer />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -23,8 +27,12 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/my-profile" element={<MyProfile />} />
-        <Route path="/my-appointment" element={<MyAppointmeint />} />
+        <Route path="/my-appointment" element={<MyAppointment />} />
         <Route path="/appointment/:docId" element={<Appointment />} />
+        <Route
+          path="/paystack-verification"
+          element={<PaystackVerification />}
+        />
       </Routes>
       <Footer />
     </div>
